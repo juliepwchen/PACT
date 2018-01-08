@@ -1,0 +1,13 @@
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+.panel-default > .panel-heading {
+  background-color: #7FE5CC;
+  text-align: center;
+  font-size: 12px;
+}
+
+ul.u {
+    list-style-type: none;
+}
+

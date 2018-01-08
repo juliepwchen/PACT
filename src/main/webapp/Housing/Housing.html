@@ -1,0 +1,528 @@
+<div class="container-fluid" ng-controller="HousingController" ng-cloak>
+
+    <div id="housingDiv" style="padding:65px 0px 0px 0px;">
+
+        <div id="toolBarDiv" class="row" style="background-color:lavender;">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-bottom:10px;">
+                <button type="button" class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <p style="font-size:9px;">Info/Help</p>
+                </button>
+                <!-- <button type="button" class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-file"></span>
+                </button>
+                <button type="button" class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                </button>
+                <button type="button" class="btn btn-primary btn-lg">
+                    <span class="glyphicon glyphicon-book"></span>
+                </button> -->
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-bottom:10px;">
+                <button type="button" class="btn btn-warning btn-lg">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                    <p style="font-size:9px;">Rideshare</p>
+                </button>
+                <!-- <button type="button" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-stats"></span>
+                    <p style="font-size:8px;">Topic List</p>
+                </button>
+
+                <button type="button" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+                <button type="button" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-tasks"></span>
+                </button>
+                <button type="button" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-briefcase"></span>
+                </button> -->
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="padding-bottom:10px;">
+                <!-- <button type="button" class="btn btn-danger btn-lg">
+                    <span class="glyphicon glyphicon-cloud-upload"></span>
+                </button> -->
+                <button type="button" class="btn btn-danger btn-lg">
+                    <span class="glyphicon glyphicon-phone-alt"></span>
+                    <p style="font-size:9px;">Emergency</p>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="accordionDiv" class="row" style="background-color:lavender;">
+
+        <accordion close-others="oneAtATime">
+            <accordion-group>
+                <accordion-heading style="a:hover {text-decoration:none;}">
+                    Housing/Viviendas<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus-sign': status.open, 'glyphicon glyphicon-plus-sign': !status.open}"></i>
+                    <!-- /住房狀況 -->
+                </accordion-heading>
+
+                <h4><strong>Eligibility</strong></h4>
+                <ul class="u"><li>
+
+                <table class="table table-hover table-condensed table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><h5>Housing Size:</h5></td>
+                        <td><h4><span class="label label-default">1BR/1BA & up</span></h4></td>
+                    </tr>
+                    <tr>
+                        <td><h5># People:</h5></td>
+                        <td><h4><span class="label label-default">1 to 2</span></h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Accommodations:</h5></td>
+                        <td><h4><span class="label label-default">Unit without Stairs</span></h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Elderly:</h5></td>
+                        <td><h4><span class="label label-default"> > 50+/ < 62+</span></h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Disability:</h5></td>
+                        <td><h4><span class="label label-default">YES</span></h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Supportive Services:</h5></td>
+                        <td><h4><span class="label label-default">YES</span></h4></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><h5>States:</h5></td>
+                        <td><h4><span class="label label-default">CA AZ NV</span></h4></td>
+                        <td></td>
+                    </tr>
+
+                    </tbody>
+                    </table>
+                    </li></ul>
+
+                    <h4>Housing Vouchers:</h4>
+                    <ul class="u"><li>
+
+                        <table class="table table-hover table-condensed table-striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                    <tr>
+                        <td><h5>Tenant-based:</h5></td>
+                        <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                        <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                    </tr>
+                    <tr>
+
+                        <td><h5>Project-based:</h5></td>
+                        <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                        <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </li></ul>
+
+                    <h4>Public Housing:</h4>
+                    <ul class="u"><li>
+                    <table class="table table-hover table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td><h5>Federal:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>State:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>County:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>City:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                </li></ul>
+
+                <h4>Multi-family Subsidized Housing:</h4>
+                <ul class="u"><li>
+                    <table class="table table-hover table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td><h5>Federal:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>State:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>Tax Credit Program:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </li></ul>
+
+                <h4>Special Housing Programs:</h4>
+                <ul class="u"><li>
+                    <table class="table table-hover table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td><h5>Shelter:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>Transitional:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>Mental Health:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        <tr>
+                            <td><h5>Complex Health Needs:</h5></td>
+                            <td><h4><span class="label label-info">Wait-List</span></h4></td>
+                            <td><button style="display:block;" class="btn btn-default btn-sm" ng-click="">QRCode</button></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </li></ul>
+
+            </accordion-group>
+
+            <accordion-group  is-open="status.open">
+                <accordion-heading>
+                    <span class="glyphicon glyphicon-bell" style="color:red;"></span>
+                    Subsidies/Subvenciones <i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus-sign': status.open, 'glyphicon glyphicon-plus-sign': !status.open}"></i>
+                    <!-- /獎勵 -->
+                </accordion-heading>
+
+                <!-- <table class="table table-hover table-condensed table-striped">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> -->
+                            <h4>July 1st, 2015 - <span class="label label-default">Total:$750.00</span></h4>
+                            <ul class="u">
+                                <li>
+                                    <table class="table table-hover table-condensed table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <h5>SSI:</h5>
+                                            </td>
+                                            <td>
+                                                <h4><span class="label label-default">$750.00</span></h4>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default btn-sm disabled" ng-click="">QRCode</button>
+                                            </td>
+                                        </tr>
+                                       <tr>
+                                            <td>
+                                                <h5>Food Stamps:</h5>
+                                            </td>
+                                            <td>
+                                                <h4><span class="label label-info">Renew Required</span></h4>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default btn-sm" ng-click="">Apply</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Medicaid:</h5>
+                                            </td>
+                                            <td>
+                                                <h4><span class="label label-danger">Expired</span></h4>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default btn-sm" ng-click="">Apply</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>SSDI:</h5>
+                                            </td>
+                                            <td>
+                                                <h4><span class="label label-default">NA</span></h4>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default btn-sm disabled" ng-click="">Apply</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>Social Security:</h5>
+                                            </td>
+                                            <td>
+                                                <h4><span class="label label-default">NA</span></h4>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default btn-sm disabled" ng-click="">Apply</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <h5>FLTCIP:</h5>
+                                            </td>
+                                            <td>
+                                                <h4><span class="label label-default">NA</span></h4>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-default btn-sm disabled" ng-click="">Apply</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </li>
+                            </ul>
+                        <!-- </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table> -->
+            </accordion-group>
+
+            <accordion-group>
+                <accordion-heading>
+                    Personal Info/Información Personal<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus-sign': status.open, 'glyphicon glyphicon-plus-sign': !status.open}"></i>
+                <!-- /個人信息 -->
+                </accordion-heading>
+
+                <!-- <div class="table-responsive"> -->
+                    <table class="table table-hover table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <p><strong>Mary F. Doe</strong></p>
+                                <ul class="u">
+                                    <li>SS#: 657-44-xxxx</li>
+                                    <li>DOB: 11/23/1970</li>
+                                    <li>Age: 45</li>
+                                    <li>Marital Status: Single</li>
+                                    <li>Gender: Female</li>
+                                    <li>Disability: YES</li>
+                                    <li>Elderly: YES (< 62+)</li>
+                                    <li>Homeless: YES</li>
+                                    <li>Race: White</li>
+                                    <li>Ethnicity: Not Hispanic or Latino</li>
+                                    <li>Primary Language: English</li>
+                                    <li>Need Interpreter: No</li>
+                                    <li>Head of the Household: Yes</li>
+                                    <li># of People: 3</li>
+                                </ul>
+
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm" ng-click="">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>2015 Tax Return</strong></p>
+                                <ul class="u">
+                                    <li>Tax Return: NA</li>
+                                </ul>
+
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm" ng-click="">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Credit Check</strong></p>
+                                <ul class="u">
+                                    <li>Credit Score: NA</li>
+                                </ul>
+
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm" ng-click="">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Geography:</strong></p>
+                                <ul class="u">
+                                    <li>GPS: Longitude: 40.456 Latitude: -134.456</li>
+                                    <li>State Of Residence: California</li>
+                                    <li>Couty Of Residence: Sacramento</li>
+                                    <li>City Of Residence: Sacramento</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm" ng-click="">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Contact Information:</strong></p>
+                                <ul class="u">
+                                    <li>3425 Roseville Blvd. Apt. 445</li>
+                                    <li>Roseville, CA 99870</li>
+                                    <li>445-556-xxxx</li>
+                                    <li>JaneDoe@gmail.com</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm" ng-click="">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>Dependents: 2</strong></p>
+                                <ul class="u">
+                                    <li>Relationship: Youth < 18</li>
+                                    <li>Frank Smith</li>
+                                    <li>Male</li>
+                                    <li>DOB: 01/05/2014</li>
+                                    <li>SS#: 456-78-xxxx</li>
+                                </ul>
+                                <ul class="u">
+                                    <li>Relationship: Youth < 18</li>
+                                    <li>Jane Doe</li>
+                                    <li>Female</li>
+                                    <li>DOB: 11/05/2012</li>
+                                    <li>SS#: 456-78-xxxx</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm" ng-click="">Edit</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><strong>All Household Members</strong></p>
+                                <ul class="u">
+                                    <li>Monthly Gross income: $733.00
+                                        <ul class="u">
+                                            <li>SSI: $733.00</li>
+                                            <li>Social Security: $0.00</li>
+                                            <li>Disability: $0.00</li>
+                                            <li>Other Sources: $0.00</li>
+                                        </ul>
+                                    </li>
+                                    <li>rent payment: $900.00/month</li>
+                                    <li>utility payment: $50.00/month</li>
+
+                                </ul>
+
+                            </td>
+                            <td>
+                                <button class="btn btn-default btn-sm" ng-click="">Edit</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+               <!-- </div> comment out table-responsive -->
+
+            </accordion-group>
+
+            <accordion-group>
+                <accordion-heading>
+                    Health Care/Cuidado De La Salud<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus-sign': status.open, 'glyphicon glyphicon-plus-sign': !status.open}"></i>
+                <!-- /衛生保健 -->
+                </accordion-heading>
+                <p>Doctor Preference: Female</p>
+                <p>Health Conditions: Morbid obesity/Type II Diabetes/Hepatitis C/Hypertension, Congestive heart failure/Renal insufficiency/Asthma</p>
+                <p>Dentist: </p>
+            </accordion-group>
+
+            <accordion-group>
+                <accordion-heading>
+                    Health Management/Manejo De La Salud<i class="pull-right glyphicon" ng-class="{'glyphicon glyphicon-minus-sign': status.open, 'glyphicon glyphicon-plus-sign': !status.open}"></i>
+                <!-- /健康管理 -->
+                </accordion-heading>
+                <p>Fitness Membership: 24-Hour Fitness/Bikram Yoga</p>
+                <p>Trader Joe's Credits: Diabetes Diet</p>
+                <p>Sprout's Credits: Gluten Free Diet</p>
+                <p>Smoker Anonymous</p>
+                <p>Sexual Abuse Group Therapy</p>
+                <p>Drug Free Group Therapy</p>
+                <p>AA Meeting</p>
+
+            </accordion-group>
+
+        </accordion>
+
+        </div>
+
+
+    </div> <!-- housingDiv -->
+
+</div> <!-- container-fluid -->

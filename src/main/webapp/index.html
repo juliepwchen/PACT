@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="">
+<head lang="en-US">
+    <meta charset="UTF-8"> <!-- Bootstrap uses HTML elements and CSS properties that require the HTML5 doctype. -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- width=device-width: sets the width of the page to follow the screen-width of the device
+         initial-scale=1: sets the initial zoom level when the page is first loaded by the browser -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="Jobs, Careers, Staffing, Engineers, Consulting" />
+    <meta name="author" content="Julie Chen" />
+    <meta name="description" content="Open Interview" />
+    <meta http-equiv="refresh" content="3600" />							<!-- refresh document every hour -->
+
+    <title>Open Interview</title>
+
+    <script data-main="main.js" src="js/library/require.min-2.1.17.js"></script>    <!-- This sets the baseUrl to the "" directory unless it's set manually via the RequireJS config -->
+
+    <!-- <link rel="shortcut icon" href="img/favicon2.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon2.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/bootstrapValidator.min.css" >
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/housing.css">
+</head>
+<body ng-controller="indexController">
+<div id="fb-root"></div>
+<script src="js/library/fblogin.js"></script>
+
+<div id="wrap" ng-cloak>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+
+        <!-- Bootstrap also requires a containing element to wrap site contents.
+             .container class provides a responsive fixed width container
+             .container-fluid class provides a full width container, spanning the entire width of the viewport
+             Containers are not nestable - cannot put a container inside another container -->
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div>
+                    <img alt="" src="" id="cscicon" style="margin-top: 5px;float: left" />
+                    <!-- <a class="navbar-brand" href="#"><span style="color:#FF6600">Diet, Life Style, Mortality Visualization</span><span style="color:#FF6600"> </span></a> -->
+                    <!-- a class="navbar-brand" href="#"><span style="color:#FF6600">Super Utilizer Helper</span></a -->
+                    <a class="navbar-brand" href="#"><span style="color:#FF6600">USDA Helper</span></a>
+                </div>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+
+                    <!-- <li><a href="#mngDivCushion">Management</a></li>
+                    <li><a href="#servicesDivCushion">Service</a></li>
+                    <li><a href="#consultingDivCushion">Consulting</a></li>
+                    <li><a href="#technoDivCushion">Technology</a></li> -->
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right" ng-switch="authenticated">
+                    <!--
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Company<span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Information</li>
+                        <li><a href="#java">Profile</a></li>
+                        <li><a href="#algorithms">Careers</a></li>
+                        <li><a href="#designpatterns">Leadership</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Publications</li>
+                        <li><a href="#blog">Blogs</a></li>
+                        <li><a href="#youtube">Videos</a></li>
+                        <li><a href="#githubs">Git Hubs</a></li>
+                      </ul>
+                    </li> -->
+
+                    <li ng-switch-when="true" ng-click="logout()"><a ui-sref="logout"><span class="glyphicon glyphicon-user"></span>  Logout</a></li>
+                    <li ng-switch-when="false"><a ui-sref="register"><span class="glyphicon glyphicon-user"></span>  Register</a></li>
+                    <li ng-switch-when="false"><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span>  Log In<span class="sr-only">(current)</span></a></li>
+
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div id="status"></div>
+    <div ui-view></div>
+
+</div>
+
+<!-- <button onclick="fblogout()">log out</button> -->
+
+</body>
+</html>

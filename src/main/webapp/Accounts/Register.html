@@ -1,0 +1,54 @@
+
+<div id="register" style="width:100%;" ng-controller="RegisterController" ng-cloak>
+
+    <div style="margin-top:50px" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Create a New Account:</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+            </div>
+            <div class="panel-body" >
+
+                <form name="registrationForm" ng-submit="submitForm(registrationForm.$valid)" novalidate>
+
+                    <!-- EMAIL -->
+                    <div class="form-group" ng-class="{ 'has-error' : registrationForm.email.$invalid && !registrationForm.email.$pristine }">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" ng-model="registration.user.email" placeholder="Email address"  required autofocus />
+                        <p style="font-size: 12px" ng-show="registrationForm.email.$invalid && !registrationForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group" ng-class="{ 'has-error' : registrationForm.password.$invalid && !registrationForm.password.$pristine }">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" ng-model="registration.user.password" placeholder="Password" required />
+                        <p style="font-size: 12px" ng-show="registrationForm.password.$error.required && registrationForm.password.$dirty" class="help-block">Required</p>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-group" ng-class="{ 'has-error' : registrationForm.cfpassword.$invalid && !registrationForm.cfpassword.$pristine }">
+                        <label>Confirm Password</label>
+                        <input type="password" name="cfpassword" class="form-control" ng-model="registration.user.cfpassword"
+                               compare-to="registration.user.password" placeholder="Confirm Password" required />
+                        <!-- <p class="help-block" ng-messages="registrationForm.cfpassword.$error" ng-messages-include="Common/messages.html"></p> -->
+                        <p style="font-size: 12px" ng-show="registrationForm.cfpassword.$error.required && registrationForm.cfpassword.$dirty" class="help-block">Required</p>
+                        <p style="font-size: 12px" ng-show="registrationForm.cfpassword.$error.compareTo && registrationForm.cfpassword.$dirty" class="help-block">Password must match</p>
+                    </div>
+
+                    <!--
+                    <div class="checkbox">
+                        <label id="inputLabel">
+                            <input type="checkbox" value="accept_terms"  /> I accept the <u>Terms and Conditions</u>
+                        </label>
+                    </div> -->
+                    <p style="font-size: 13px">By clicking Register, you agree to the <u>User Agreement</u> and <u>Cookie Policy</u>.</p>
+
+                    <button ng-click="register()" ng-disabled="registrationForm.$invalid" class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</div>

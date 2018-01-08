@@ -1,0 +1,56 @@
+<div class="container" ng-controller="LoginController" ng-cloak>
+
+    <div style="margin-top:50px" class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title"></div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"></div>
+            </div>
+            <div class="panel-body" >
+
+    <div id="socialMediaBtnDiv">
+        <!--
+      <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>Facebook</button>
+      <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>LinkedIn</button> -->
+
+      <button ng-click="fblogin()" id="fbloginBtn" class="btn btn-lg btn-primary btn-block type="button"></button>
+      <button ng-click="fblogin()" id="linkedinloginBtn" class="btn btn-lg btn-primary btn-block type="button"></button>
+
+    </div>
+
+    <div class="login-or col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <hr class="hr-or">
+        <span class="span-or">or</span>
+    </div>
+
+    <form name="userForm" ng-submit="login()" novalidate>
+
+        <!-- EMAIL -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+            <label class="sr-only">Email</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="Email address"  required autofocus />
+            <p style="font-size: 12px" ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+            <label class="sr-only">Password</label>
+            <input type="password" name="password" class="form-control" ng-model="user.password" placeholder="Password" required />
+            <p style="font-size: 12px" ng-show="userForm.password.$error.required && userForm.password.$dirty" class="help-block">Required</p>
+        </div>
+
+        <div class="checkbox">
+            <label id="inputLabel">
+                <input style="font-size: 13px" type="checkbox" value="rememberme"  /> Remember Me
+            </label>
+        </div>
+
+        <button ng-disabled="userForm.$invalid" type="submit" class="btn btn-lg btn-primary btn-block">Log In</button>
+
+    </form>
+
+                </div>
+            </div>
+        </div>
+
+</div> 
